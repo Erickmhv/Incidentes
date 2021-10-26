@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="IncidentesBlazor.Module.BusinessObjects.Incidentes.Base">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="EnumEstatus" Caption="Estatus" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>

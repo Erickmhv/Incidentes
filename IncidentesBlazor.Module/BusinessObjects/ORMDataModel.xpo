@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="de0b6918-75e7-4902-a0ea-808f84f99680" namespace="IncidentesBlazor.Module.BusinessObjects.Incidentes" dataBaseShemaInfo="H4sIAAAAAAAEAO1aXW8UNxR9R+I/RHnmZv39gTaLSgIUtSBEoOrrtX2djLrZjWZmk/Tf904SQhKgDeqw2yL2aeba1vjMPT4+17PTJ+fH861Tartmudjdljti+8ns4YPpU+zooF+2eEgvF3W5xb0W3ePzrtndPur7k8eTydnZ2c6Z3lm2hxMlhJz8/urXg3xExwjNoutxkWn7elT551Hb/NStrek7THPqhkde3H+I3Ah8CL3GY5rt0wm2PV8t+uV08jF+3fXZYojN+nZF08nVzXXjftMNgfcnBXuaVZx33Ol28Lrvi1VTXpYZ1VqUMhGychmMMhaCcxaiQmGDVwqlmU6uOl8P3lvOV8eL7haKL4a5YcBw2Th7vTxOLU/rRuhW178D+LUgbwIVTtXkogUMxYEJtkByzoP0OqmsqjVRfwKUh0/+BdZnzJt+1a0fbFY6JEsGZI4IxjmEFJ0GnUn7IEmU4MYG+3TZtliW6wdL2ojiyIJIPoCplsEG6SFLFRIWXXQUY4N9TvkI39Jh0/XtBiAHZxiwFyANec5v0ZBkNlCLE5FSqKTsN4H8alma2mTMrK7rh52iT4KXLohgh0w7CahLgFplRKHRWbo/rT8XvZLce8v1wRzXotKSYtIyMlJTBItXrZB0yFCJQqo6BKfrqCq9T11um5PNpFk7q4uSEozGyGhFAXRRgHJKOOFNNaqMze49XPRNwfIzW4QNCLYWVdmUHYhSGTJvSJAYKSiSsmB2ikT6zjTMCDvkE0HWxJyuSIAmeCAvXRGxVEzfBvJmNUygE0K4AKUWy5kWEmJSw9YskaW7sufya9WwN22zbAfqr0fJkgrswhBQDkTXfBWqVkA2OpME+mzG9ZsXEr3uJHtWMMKYIWVyg/9KECIiqMjSHZ1HJBqb25sy1jYQexE1+C3PGa2aUQfvwBWFgUTErD/N6P9bumpEnZCB5piJ17CKEG1itdbFh5yrVXX0WuI/IF1cKEaMnGSP7D2My543KTbaymkyCglLuD/sMaTr4p2sRbYEKsc1UwCpEmc8GjZgXCBDKNHElIYKWo0qWxtmuFPGJ8kCJriOZLzSQbC2go/VeCuMkeZ7LDCMDFll4gxX5rWJWAFjVOA1E78kpni9v/Mcg+HDsdUPgv8g+HdL8JeL3BRa9OthuanKZ8e+W6IsYARX1MGKOvgylUVxSag4KstvmOu1e1DDG7Jl50lSsy+LgRcz/0AGFYbT3ZLV6L7s9vH1+itKLDXECNJgGg4CDcRcDNggUDgurmIdvaJ81/Sr+QaweoYkmc6gQpWcXeLsVo8gikSuqkRBO/oJ70YPhZzXNgbDTjtqVi7reYPiH5Rko81G5Si/zXHBXkPtJuoqNDU5rQmKtqxVKLiuqtaDcC4XmwsH8uinYMth6SKL1qZQyxJrxRSgKGFYoauAoByCztkqV3MoX5HmMTaon9mgsITjfL07VfCZvE/sSlAjZ18aQM3rOztbq1G+1JG/y92At+6cx8TVdJUZCqnBiymC5IOHErXQPpALfvRy+iPTN/D1hjdmJbSE4qMDI3mzwiw8xCRtKloI9majcvzq/mOX6fApnMqbdpkvgluTy/Bvl9/NWelPn52ftNR1O/vY486pkjvy0dZV8+5wt2N2xKOtvdW8X7W0u6BV3+L80dabVZo3+Rf6893yD1rspsAL1ltTvBDEdnM6+fCIi+ftzbHrqBsS8HZ1/XanPxWeGtXm/Gpel6GDVb0VekvHy1O62/EyerfvHtdRs/cLlvPFIbEZu7i/fDWfm8OU38wJtX2z4bl9YRrTF7SglunFLB5o3F1x9JPwrc68fTeHfPm8YSrcGXG77WLY69V8PrDmKR3hKbtYJkVFTjevl7stDx9MJ3f+YDH7C05TodaJIQAA" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" connectionStringName="DESKTOP-1L1NPUFSQLEXPRESSIncidentes" createdInVersion="21.1.4.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="true" lastModifiedInVersion="21.1.4.0" name="Incidentes" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="6ce609a3-ebe7-4e48-a1ff-80cf1801e751">
+      <xpObject Id="effd2249-c26c-4245-8665-92a058722a14" name="Departamento" baseClass="Base" userFileName="Departamento" designerFileName="Departamento.Designer" className="Departamento" virtualBaseClass="Base" virtualName="Departamento">
+        <fields>
+          <generalXpObjectHasFields Id="f0db6ce5-7d67-4756-bc59-bafac9316599">
+            <field Id="062fb695-a8d6-485d-b667-173b2c2f5493" name="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="01be7478-8f4a-4beb-8367-34dffcd41ee9">
+            <xpObjectMoniker Id="0a26d868-12be-494f-ba05-8d949bb22492" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="eadb5817-5e18-407f-bb7c-18d894984b11">
+      <xpObject Id="1e9b3198-f4d0-48ff-b38c-fee8bf38863f" name="Sla" baseClass="Base" userFileName="Sla" designerFileName="Sla.Designer" className="Sla" virtualBaseClass="Base" virtualName="Sla">
+        <fields>
+          <generalXpObjectHasFields Id="ffdfe9f0-d403-4ad6-8134-7275aed0c991">
+            <field Id="3653d211-43a9-480d-a690-26206074f42d" name="Descripcion" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="18f8d797-6b24-4efe-a9d3-6702d91d9d5c">
+            <field Id="30f25bc6-0df9-42c2-b074-2e11dac62e0b" name="CantidadHoras" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="261497bd-4ea3-4c58-81ac-054b916f8432">
+            <xpObjectMoniker Id="0a26d868-12be-494f-ba05-8d949bb22492" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="028d4736-f07e-4d19-ad1e-ffc463cd563d">
+      <xpObject Id="1b28695a-a1f9-435a-8f32-e5964b0a7c44" name="Prioridad" baseClass="Base" userFileName="Prioridad" designerFileName="Prioridad.Designer" className="Prioridad" virtualBaseClass="Base" virtualName="Prioridad">
+        <fields>
+          <generalXpObjectHasFields Id="cb0434f2-2510-4595-88e1-b881b1372790">
+            <field Id="7653ea9c-bce6-466b-89aa-298ff967aaee" name="Sla" columnType="Single" virtualColumnType="Sla" logicalType="Sla" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0ea42420-5365-4009-b6eb-ab8ea399ada1">
+            <field Id="58e6e527-c179-4f3c-b876-6d2a8e09ac34" name="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="faccb03e-8971-4a10-9fc4-63d897d70a0c">
+            <xpObjectMoniker Id="0a26d868-12be-494f-ba05-8d949bb22492" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="a1ac30cf-366e-498c-9c6e-d77e2028f42b">
+      <xpObject Id="0a26d868-12be-494f-ba05-8d949bb22492" name="Base" baseClass="XPObject" userFileName="Base" designerFileName="Base.Designer" className="Base" virtualName="Base">
+        <fields>
+          <generalXpObjectHasFields Id="4d31b927-3558-4b44-94ff-aa864ba4e722">
+            <field Id="6247b19c-08b5-4916-855f-79f475044145" name="FechaRegistro" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="56645221-67d1-474f-9c3c-aa95f14d791e">
+            <field Id="418c2cee-4f17-49af-a992-739a9dbaeafd" name="FechaModificacion" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="a1ac9110-cdbd-407f-8119-a752fb7025ea">
+      <xpObject Id="4f27c6d5-1a1d-4098-850f-2982c0d6b029" name="Incidente" baseClass="Base" userFileName="Incidente" designerFileName="Incidente.Designer" className="Incidente" virtualBaseClass="Base" virtualName="Incidente">
+        <fields>
+          <generalXpObjectHasFields Id="4c6bb6c6-c9b9-4f1b-a243-92978ef3b292">
+            <field Id="74ead56b-e139-4985-8888-182892a0dc24" name="Prioridad" virtualColumnType="Prioridad" logicalType="Prioridad" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2efb0d20-42dc-44c0-a1e1-800ea92c38a9">
+            <field Id="40adf899-14ab-4f54-9cd4-580a069eb9fb" name="Departamento" columnType="Decimal" virtualColumnType="Departamento" logicalType="Departamento" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="078db052-c3e1-4bc8-af65-f80e0548fdd2">
+            <field Id="70a014f2-28f1-49e5-8f7a-0d1a4350da56" name="Titulo" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6154e90a-2d4d-4b3a-a963-19f4f5b71e3a">
+            <field Id="67359849-9937-457f-bbbb-db595c42c91b" name="Descripcion" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5d5beee0-14be-4b8e-bb3a-a22f8ed906c2">
+            <field Id="a4fb633e-d35d-4a0c-bf57-066cd5cda0cc" name="FechaCierre" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2a121580-39ea-4bdc-be0f-0ec1fcff140d">
+            <field Id="1d9ffab8-d204-40f0-826a-3cc526fc8d1b" name="ComentarioCierre" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="bb5deb36-5ccd-4b67-837e-2ab0eb33629b">
+            <xpObjectMoniker Id="0a26d868-12be-494f-ba05-8d949bb22492" />
+          </inheritance>
+        </superClass>
+        <saTargets>
+          <simpleAssociation Id="cb135867-3741-4b72-8cb9-299b95bbcea3" sourceCollectionName="HistorialIncidentes" name="HistorialIncidenteReferencesIncidente" targetFieldName="Incidente">
+            <xpObjectMoniker Id="87ce77b6-8a3a-4a14-a37a-c65ff427df14" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="58fcf495-3097-495b-b266-6fb3b2d3d2a9">
+            <collectionField Id="4d8d1040-1581-43da-b812-d6301c0a71e5" name="HistorialIncidentes" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="5b6e6c2e-d110-4b59-a562-77287cc1449e">
+      <xpObject Id="87ce77b6-8a3a-4a14-a37a-c65ff427df14" name="HistorialIncidente" baseClass="Base" userFileName="HistorialIncidente" designerFileName="HistorialIncidente.Designer" className="HistorialIncidente" virtualBaseClass="Base" virtualName="HistorialIncidente">
+        <fields>
+          <generalXpObjectHasFields Id="8647fc96-c5a3-4d3f-a1c2-df9f3a5eb76b">
+            <field Id="9b3baf1c-de25-492e-b787-d930378e6873" name="Incidente" virtualColumnType="Incidente" logicalType="Incidente" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5285c903-8628-4db0-a5df-9b901a98f9db">
+            <field Id="8ead2031-d796-41ab-ac07-9b15bd300f17" name="Comentario" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="d50a64f0-bfc4-4cd9-ad84-51f2bf60d3e7">
+            <xpObjectMoniker Id="0a26d868-12be-494f-ba05-8d949bb22492" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

@@ -1,0 +1,13 @@
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.AssemblyInfoInputs.cache
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.AssemblyInfo.cs
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.csproj.CoreCompileInputs.cache
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\bin\Debug\net5.0\appsettings.json
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\bin\Debug\net5.0\IncidentesBlazor.Module.deps.json
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\bin\Debug\net5.0\IncidentesBlazor.Module.dll
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\bin\Debug\net5.0\ref\IncidentesBlazor.Module.dll
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\bin\Debug\net5.0\IncidentesBlazor.Module.pdb
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.dll
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\ref\IncidentesBlazor.Module.dll
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.pdb
+C:\Users\LEGION\source\repos\IncidentesBlazor\IncidentesBlazor.Module\obj\Debug\net5.0\IncidentesBlazor.Module.csprojAssemblyReference.cache

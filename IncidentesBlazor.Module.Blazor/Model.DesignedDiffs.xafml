@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="IncidentesBlazor.Module.BusinessObjects.ApplicationUser">
+      <OwnMembers>
+        <Member Name="Cedula" EditMask="000-0000000-0" DisplayFormat="000-0000000-0" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Incidente_ListView" Criteria="" Filter="" />
+  </Views>
+</Application>

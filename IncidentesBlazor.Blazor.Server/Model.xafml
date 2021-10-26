@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="Close" Caption="Cerrar" />
+      <Action Id="Delete" ConfirmationMessage="Estas a punto de borrar el siguiente item. Quieres proceder?" />
+      <Action Id="FullTextSearch" NullValuePrompt="Filtrar Por Texto" ShortCaption="Buscar" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="IncidentesBlazor.Module.BusinessObjects.ApplicationUser" Caption="Usuario">
+      <OwnMembers>
+        <Member Name="Cedula" EditMask="" DisplayFormat="" />
+        <Member Name="CreadoPor" AllowEdit="False" />
+        <Member Name="FechaModificacion" AllowEdit="False" />
+        <Member Name="FechaRegistro" AllowEdit="False" />
+        <Member Name="ModificadoPor" AllowEdit="False" />
+        <Member Name="Telefono" EditMask="" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IncidentesBlazor.Module.BusinessObjects.Incidentes.Base">
+      <OwnMembers>
+        <Member Name="CreadoPor" AllowEdit="False" />
+        <Member Name="FechaModificacion" AllowEdit="False" EditMaskType="DateTime" EditMask="G" />
+        <Member Name="FechaRegistro" AllowEdit="False" EditMask="G" />
+        <Member Name="ModificadoPor" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="IncidentesBlazor.Module.BusinessObjects.Incidentes.Incidente">
+      <AppearanceRules>
+        <AppearanceRule Id="Incidente-FechaCierre" TargetItems="*" Enabled="False" Criteria="[FechaCierre] Is Not Null" IsNewNode="True" />
+      </AppearanceRules>
+      <OwnMembers>
+        <Member Name="FechaCierre" EditMask="G" />
+        <Member Name="HistorialIncidentes" AllowEdit="False" />
+        <Member Name="UsuarioReportaId" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default" Caption="Inicio">
+        <Items>
+          <Item Id="Incidentes" ViewId="Incidente_ListView" ImageName="State_Task_InProgress" Index="1" IsNewNode="True" />
+          <Item Id="@c3eab346-f002-4405-96eb-1b80204b6c13" Caption="Mantenimiento" ImageName="BO_Folder" Index="2" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Departamento_ListView" ViewId="Departamento_ListView" ImageName="BO_Organization" ObjectKey="" Index="1" IsNewNode="True" />
+              <Item Id="Puesto" ViewId="Puesto_ListView" Index="2" IsNewNode="True" />
+              <Item Id="ApplicationUser_ListView" Caption="Usuario" ViewId="ApplicationUser_ListView" ObjectKey="" Index="3" IsNewNode="True" />
+              <Item Id="@bcd84837-4cf3-4ffe-8401-49bec8398533" ViewId="Sla_ListView" ImageName="BO_Department" Index="4" IsNewNode="True" />
+              <Item Id="Prioridad" Caption="Prioridad" ViewId="Prioridad_ListView" ImageName="Prioritized" Index="5" IsNewNode="True" />
+              <Item Id="MyDetails" Caption="Configuracion Usuario" ImageName="BO_MyDetails" ObjectKey="@CurrentUserID" ViewId="ApplicationUser_DetailView" Index="6" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="ApplicationUser_ListView" Caption="Usuario" Removed="True" />
+          <Item Id="Departamento_ListView" ImageName="BO_Organization" Removed="True" />
+          <Item Id="MyDetails" Caption="Mis Detalles" Removed="True" />
+          <Item Id="PermissionPolicyRole_ListView" Caption="Puestos" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="ApplicationUser_DetailView">
+      <Items>
+        <PropertyEditor Id="ChangePasswordOnFirstLogon" Caption="Cambiar Clave Al Iniciar Sesion" />
+        <PropertyEditor Id="EnumEstatus" Caption="Estatus" />
+        <PropertyEditor Id="IsActive" Caption="Esta Activo" />
+        <PropertyEditor Id="Oid" Caption="UsuarioId" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="37.04883227176221">
+            <LayoutGroup Id="ApplicationUser" RelativeSize="75.93123209169055" Direction="Vertical">
+              <LayoutGroup Id="ApplicationUser_col1" RelativeSize="100">
+                <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="0" RelativeSize="13.793103448275861" IsNewNode="True" />
+                <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="1" RelativeSize="10.344827586206897" IsNewNode="True" />
+                <LayoutItem Id="Nombre" RelativeSize="10.344827586206897" Index="2" />
+                <LayoutItem Id="Apellido" RelativeSize="10.344827586206897" Index="3" />
+                <LayoutItem Id="Cedula" RelativeSize="10.344827586206897" Index="4" />
+                <LayoutItem Id="Correo" RelativeSize="10.344827586206897" Index="5" />
+                <LayoutItem Id="Telefono" RelativeSize="10.344827586206897" Index="6" />
+                <LayoutItem Id="FechaNacimiento" RelativeSize="9.482758620689655" Index="7" />
+                <LayoutItem Id="EnumEstatus" ViewItem="EnumEstatus" Index="8" RelativeSize="14.655172413793103" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ApplicationUser_col2" RelativeSize="50" Caption="ApplicationUser_col2" Removed="True">
+                <LayoutItem Id="CreadoPor" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="17.391304347826086" Index="0" Removed="True" />
+                <LayoutItem Id="EnumEstatus" RelativeSize="20" Removed="True" />
+                <LayoutItem Id="FechaModificacion" RelativeSize="15" Removed="True" />
+                <LayoutItem Id="ModificadoPor" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="PermissionPolicyUser" RelativeSize="24.068767908309457">
+              <LayoutItem Id="ChangePasswordOnFirstLogon" RelativeSize="35.714285714285715" />
+              <LayoutItem Id="UserName" RelativeSize="27.38095238095238" />
+              <LayoutItem Id="IsActive" RelativeSize="36.904761904761905" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Roles_Group" Direction="Vertical" RelativeSize="62.95116772823779">
+            <LayoutItem Id="Roles" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="AuthenticationStandardLogonParameters_Blazor_DetailView">
+      <Items>
+        <StaticText Id="LogonText" Text="Ingresar su nombre de usuario y clave debajo." />
+        <PropertyEditor Id="Password" Caption="Clave" />
+        <PropertyEditor Id="UserName" Caption="Nombre Usuario" />
+      </Items>
+    </DetailView>
+    <DetailView Id="CriteriaProvider_DetailView">
+      <Items>
+        <PropertyEditor Id="FilterString" Caption="Filtro String" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Departamento_DetailView">
+      <Items>
+        <PropertyEditor Id="Oid" Caption="DepartamentoId" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Departamento" RelativeSize="14.543524416135881" Caption="Nombre">
+              <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="24.817518248175183" IsNewNode="True" />
+              <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="1" RelativeSize="17.51824817518248" IsNewNode="True" />
+              <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="2" RelativeSize="17.51824817518248" IsNewNode="True" />
+              <LayoutItem Id="Nombre" RelativeSize="17.51824817518248" Index="3" />
+              <LayoutItem Id="Estatus" ViewItem="Estatus" Index="4" RelativeSize="22.62773722627737" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="85.45647558386412" Caption="Oid" Index="1">
+              <LayoutItem Id="Oid" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Base" RelativeSize="7.965686274509804" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="Base_col2" RelativeSize="100" Caption="Base_col2" Index="0" Removed="True">
+                <LayoutItem Id="FechaModificacion" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Base_col1" RelativeSize="50" Caption="Base_col1" Removed="True">
+                <LayoutItem Id="CreadoPor" Index="0" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="ModificadoPor" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="Estatus" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Departamento_ListView">
+      <Columns>
+        <ColumnInfo Id="Oid" Caption="DepartamentoId" Index="0" />
+        <ColumnInfo Id="FechaRegistro" Index="1" />
+        <ColumnInfo Id="CreadoPor" Index="2" />
+        <ColumnInfo Id="Nombre" Index="3" />
+      </Columns>
+    </ListView>
+    <ListView Id="Departamento_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Oid" PropertyName="Oid" Index="0" Width="63" SortIndex="-1" SortOrder="None" IsNewNode="True" />
+        <ColumnInfo Id="Nombre" Width="236" Index="1" SortOrder="None" SortIndex="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="HistorialIncidente_DetailView">
+      <Items>
+        <PropertyEditor Id="Oid" Caption="HistorialIncidenteId" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="HistorialIncidente" RelativeSize="17.091295116772823">
+              <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="21.11801242236025" IsNewNode="True" />
+              <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="1" RelativeSize="14.906832298136646" IsNewNode="True" />
+              <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="2" RelativeSize="14.906832298136646" IsNewNode="True" />
+              <LayoutItem Id="Incidente" Index="3" RelativeSize="14.906832298136646" />
+              <LayoutItem Id="Estatus" ViewItem="Estatus" Index="4" RelativeSize="14.906832298136646" IsNewNode="True" />
+              <LayoutItem Id="Comentario" Index="5" RelativeSize="19.25465838509317" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="Oid" RelativeSize="82.90870488322717" Index="1">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Base" RelativeSize="7.965686274509804" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="Base_col2" RelativeSize="100" Caption="Base_col2" Index="0" Removed="True">
+                <LayoutItem Id="FechaModificacion" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="36.95652173913044" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Base_col1" RelativeSize="50" Caption="Base_col1" Removed="True">
+                <LayoutItem Id="ModificadoPor" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="CreadoPor" RelativeSize="27.272727272727273" Removed="True" />
+                <LayoutItem Id="Estatus" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="HistorialIncidente_ListView">
+      <Columns>
+        <ColumnInfo Id="FechaModificacion" Index="-1" />
+        <ColumnInfo Id="Oid" Index="0" Caption="HistorialIncidenteId" />
+        <ColumnInfo Id="FechaRegistro" Index="1" />
+        <ColumnInfo Id="CreadoPor" Index="2" />
+        <ColumnInfo Id="Incidente" Index="3" />
+        <ColumnInfo Id="Comentario" Index="4" />
+        <ColumnInfo Id="Estatus" Index="5" />
+      </Columns>
+    </ListView>
+    <ListView Id="HistorialIncidente_LookupListView">
+      <Columns>
+        <ColumnInfo Id="FechaModificacion" Index="-1" />
+        <ColumnInfo Id="ModificadoPor" Index="-1" />
+        <ColumnInfo Id="Oid" Index="0" Width="36" />
+        <ColumnInfo Id="FechaRegistro" Index="1" Width="92" />
+        <ColumnInfo Id="CreadoPor" Index="2" Width="122" />
+        <ColumnInfo Id="Incidente" Index="3" Width="65" />
+        <ColumnInfo Id="Comentario" Index="4" Width="0" />
+        <ColumnInfo Id="Estatus" Index="5" Width="56" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Incidente_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="66.66666666666667">
+            <LayoutGroup Id="Incidente" RelativeSize="53.125" Direction="Vertical">
+              <LayoutGroup Id="Incidente_col1" RelativeSize="100">
+                <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="12.5" IsNewNode="True" />
+                <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="1" RelativeSize="9.375" IsNewNode="True" />
+                <LayoutItem Id="UsuarioAsignado" Index="2" RelativeSize="9.375" />
+                <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="3" RelativeSize="9.375" IsNewNode="True" />
+                <LayoutItem Id="Prioridad" Index="4" RelativeSize="9.375" />
+                <LayoutItem Id="Descripcion" Index="5" RelativeSize="9.375" ViewItem="Descripcion" IsNewNode="True" />
+                <LayoutItem Id="Departamento" Index="6" RelativeSize="9.375" />
+                <LayoutItem Id="Estatus" ViewItem="Estatus" Index="7" RelativeSize="9.375" IsNewNode="True" />
+                <LayoutItem Id="ComentarioCierre" ViewItem="ComentarioCierre" Index="8" RelativeSize="9.375" IsNewNode="True" />
+                <LayoutItem Id="FechaCierre" ViewItem="FechaCierre" Index="9" RelativeSize="12.5" IsNewNode="True" />
+                <LayoutItem Id="UsuarioReportaId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Incidente_col2" RelativeSize="42.095588235294116" Caption="Incidente_col2" Removed="True">
+                <LayoutItem Id="ComentarioCierre" RelativeSize="69.56521739130434" Removed="True" />
+                <LayoutItem Id="Descripcion" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="FechaCierre" RelativeSize="82.6086956521739" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="Oid" RelativeSize="46.875" Index="1">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Base" RelativeSize="5.0245098039215685" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="Base_col2" RelativeSize="100" Caption="Base_col2" Index="0" Removed="True">
+                <LayoutItem Id="FechaModificacion" RelativeSize="63.63636363636363" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="100" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Base_col1" RelativeSize="50" Caption="Base_col1" Removed="True">
+                <LayoutItem Id="CreadoPor" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="Estatus" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="ModificadoPor" RelativeSize="36.36363636363637" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="HistorialIncidentes_Group" Direction="Vertical" RelativeSize="33.333333333333336">
+            <LayoutItem Id="HistorialIncidentes" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Incidente_HistorialIncidentes_ListView" AllowLink="False">
+      <Columns>
+        <ColumnInfo Id="Oid" Index="0" Width="36" Caption="HistorialIncidentesId" />
+        <ColumnInfo Id="Comentario" Index="1" Width="0" />
+        <ColumnInfo Id="FechaRegistro" Index="2" SortIndex="0" SortOrder="Descending" Width="105" />
+      </Columns>
+    </ListView>
+    <ListView Id="Incidente_ListView" Criteria="" Filter="" DataAccessMode="Client">
+      <Columns>
+        <ColumnInfo Id="ComentarioCierre" Width="107" Index="-1" />
+        <ColumnInfo Id="comentarioCierreCambio" Index="-1" />
+        <ColumnInfo Id="contador" Index="-1" />
+        <ColumnInfo Id="estatusCambio" Index="-1" />
+        <ColumnInfo Id="fechaCierreCambio" Index="-1" />
+        <ColumnInfo Id="Prioridad" Width="101" />
+        <ColumnInfo Id="Departamento" Width="128" />
+        <ColumnInfo Id="Titulo" Width="46" />
+        <ColumnInfo Id="Descripcion" Width="74" />
+        <ColumnInfo Id="FechaCierre" Width="81" />
+      </Columns>
+    </ListView>
+    <ListView Id="Incidente_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Prioridad" Width="101" />
+        <ColumnInfo Id="Departamento" Width="128" />
+        <ColumnInfo Id="Titulo" Width="46" />
+        <ColumnInfo Id="Descripcion" Width="74" />
+        <ColumnInfo Id="FechaCierre" Width="81" />
+        <ColumnInfo Id="ComentarioCierre" Width="107" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyRole_DetailView">
+      <Items>
+        <PropertyEditor Id="Oid" Caption="PuestoId" />
+      </Items>
+    </DetailView>
+    <ListView Id="PermissionPolicyRole_ListView" Caption="Puesto">
+      <Columns>
+        <ColumnInfo Id="Oid" Caption="PuestoId" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyUser_DetailView">
+      <Items>
+        <PropertyEditor Id="Oid" Caption="UsuarioId" />
+      </Items>
+    </DetailView>
+    <ListView Id="PermissionPolicyUser_ListView" Caption="Usuario">
+      <Columns>
+        <ColumnInfo Id="Oid" Caption="UsuarioId" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Prioridad_DetailView">
+      <Items>
+        <PropertyEditor Id="Oid" Caption="PrioridadId" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Prioridad" RelativeSize="19.362745098039216">
+              <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="20.253164556962027" IsNewNode="True" />
+              <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="1" RelativeSize="15.189873417721518" IsNewNode="True" />
+              <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="2" RelativeSize="15.189873417721518" IsNewNode="True" />
+              <LayoutItem Id="Sla" Index="3" RelativeSize="15.189873417721518" />
+              <LayoutItem Id="Nombre" Index="4" RelativeSize="15.189873417721518" />
+              <LayoutItem Id="Estatus" ViewItem="Estatus" Index="5" RelativeSize="18.9873417721519" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="Oid" RelativeSize="80.63725490196079" Index="1">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Base" RelativeSize="7.720588235294118" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="Base_col2" RelativeSize="100" Caption="Base_col2" Index="0" Removed="True">
+                <LayoutItem Id="FechaModificacion" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Base_col1" RelativeSize="50" Caption="Base_col1" Removed="True">
+                <LayoutItem Id="ModificadoPor" RelativeSize="50" Index="1" Removed="True" />
+                <LayoutItem Id="CreadoPor" RelativeSize="27.272727272727273" Removed="True" />
+                <LayoutItem Id="Estatus" RelativeSize="100" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Prioridad_ListView">
+      <Columns>
+        <ColumnInfo Id="Oid" Caption="PrioridadId" Index="0" Width="72" />
+        <ColumnInfo Id="FechaRegistro" Index="1" Width="92" />
+        <ColumnInfo Id="CreadoPor" Index="2" Width="122" />
+        <ColumnInfo Id="Nombre" Index="3" Width="70" />
+        <ColumnInfo Id="Sla" Index="4" Width="90" />
+        <ColumnInfo Id="Estatus" Index="5" Width="56" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Puesto_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="23.03921568627451">
+            <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="0" RelativeSize="17.02127659574468" IsNewNode="True" />
+            <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="1" RelativeSize="12.76595744680851" IsNewNode="True" />
+            <LayoutGroup Id="PermissionPolicyRoleBase" Index="2" RelativeSize="70.2127659574468" Direction="Vertical" Caption="PermissionPolicyRoleBase">
+              <LayoutGroup Id="Autob4e8a2a3-97a2-4e95-b166-7f10947be9af" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="22.727272727272727" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Apellido" ViewItem="Apellido" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto0abbca55-4ee9-4e93-a9c4-d7186fa9af28" ShowCaption="False" Caption="" Index="1" RelativeSize="36.36363636363637" IsNewNode="True">
+                <LayoutItem Id="Cedula" ViewItem="Cedula" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutGroup Id="Auto8f632968-4d79-412b-9f89-7b1132ffedb2" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="Telefono" ViewItem="Telefono" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="Correo" ViewItem="Correo" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="EnumEstatus" ViewItem="EnumEstatus" Index="2" RelativeSize="18.181818181818183" IsNewNode="True" />
+              <LayoutItem Id="FechaNacimiento" ViewItem="FechaNacimiento" Index="3" RelativeSize="22.727272727272727" IsNewNode="True" />
+              <LayoutItem Id="CanEditModel" ViewItem="CanEditModel" Index="4" RelativeSize="11.764705882352942" Removed="True" />
+              <LayoutItem Id="IsAdministrative" ViewItem="IsAdministrative" Index="4" RelativeSize="13.333333333333334" Removed="True" />
+              <LayoutItem Id="PermissionPolicy" ViewItem="PermissionPolicy" Index="4" RelativeSize="19.23076923076923" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Puesto" RelativeSize="20" Index="2" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="Puesto_col2" RelativeSize="100" Caption="Puesto_col2" Index="0" Removed="True">
+                <LayoutItem Id="CreadoPor" RelativeSize="50" Index="0" Removed="True" />
+                <LayoutItem Id="FechaModificacion" RelativeSize="36.36363636363637" Index="0" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="28.571428571428573" Index="0" Removed="True" />
+                <LayoutItem Id="ModificadoPor" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="EnumEstatus" RelativeSize="23.529411764705884" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Puesto_col1" RelativeSize="50" Caption="Puesto_col1" Removed="True">
+                <LayoutItem Id="Cedula" Index="0" RelativeSize="23.529411764705884" Removed="True" />
+                <LayoutItem Id="Correo" Index="0" RelativeSize="23.529411764705884" Removed="True" />
+                <LayoutItem Id="FechaNacimiento" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="Telefono" Index="0" RelativeSize="23.529411764705884" Removed="True" />
+                <LayoutItem Id="Apellido" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="76.96078431372548">
+            <LayoutGroup Id="Users" RelativeSize="100">
+              <LayoutItem Id="Users" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TypePermissions" RelativeSize="100">
+              <LayoutItem Id="TypePermissions" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="NavigationPermissions" RelativeSize="100">
+              <LayoutItem Id="NavigationPermissions" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="ActionPermissions" RelativeSize="100">
+              <LayoutItem Id="ActionPermissions" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Sla_DetailView">
+      <Items>
+        <PropertyEditor Id="Oid" Caption="SlaId" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Sla" RelativeSize="17.091295116772823">
+              <LayoutItem Id="Oid" ViewItem="Oid" Index="0" RelativeSize="21.11801242236025" IsNewNode="True" />
+              <LayoutItem Id="FechaRegistro" ViewItem="FechaRegistro" Index="1" RelativeSize="14.906832298136646" IsNewNode="True" />
+              <LayoutItem Id="CreadoPor" ViewItem="CreadoPor" Index="2" RelativeSize="14.906832298136646" IsNewNode="True" />
+              <LayoutItem Id="Descripcion" Index="3" RelativeSize="14.906832298136646" />
+              <LayoutItem Id="CantidadHoras" Index="4" RelativeSize="14.906832298136646" />
+              <LayoutItem Id="Estatus" ViewItem="Estatus" Index="5" RelativeSize="19.25465838509317" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="SlaId" RelativeSize="82.90870488322717" Index="1">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Base" RelativeSize="7.720588235294118" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="Base_col2" RelativeSize="100" Caption="Base_col2" Index="0" Removed="True">
+                <LayoutItem Id="FechaModificacion" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="FechaRegistro" RelativeSize="100" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Base_col1" RelativeSize="50" Caption="Base_col1" Removed="True">
+                <LayoutItem Id="CreadoPor" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="ModificadoPor" RelativeSize="50" Index="1" Removed="True" />
+                <LayoutItem Id="Estatus" RelativeSize="36.36363636363637" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Sla_ListView">
+      <Columns>
+        <ColumnInfo Id="Oid" Caption="SlaId" Index="0" Width="44" />
+        <ColumnInfo Id="FechaRegistro" Index="1" Width="92" />
+        <ColumnInfo Id="CreadoPor" Index="2" Width="122" />
+        <ColumnInfo Id="Descripcion" Index="3" Width="87" />
+        <ColumnInfo Id="CantidadHoras" Index="4" Width="94" />
+        <ColumnInfo Id="Estatus" Index="5" Width="56" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

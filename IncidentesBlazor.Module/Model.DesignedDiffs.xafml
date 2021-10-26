@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application PreferredLanguage="es">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Cancel" Caption="Cancelar" />
+      <Action Id="CancelAction" Caption="Cancelar" />
+      <Action Id="ChangePasswordByUser" Caption="Cambiar Clave" />
+      <Action Id="CopyModelDifference" Caption="Copiar Modelo" />
+      <Action Id="CreateDashboard" Caption="Crear Dashboard" />
+      <Action Id="CreateModelDifferences" Caption="Crear Modelo" />
+      <Action Id="Delete" Caption="Borrar" />
+      <Action Id="Delete Item" Caption="Borrar Item" ConfirmationMessage="Estas a punto de borrar el siguiente item. Quieres proceder?" />
+      <Action Id="DialogCancel" Caption="Cancelar" />
+      <Action Id="DialogClose" Caption="Cerrar" />
+      <Action Id="ExportModelDifferences" Caption="Exportar Modelo" />
+      <Action Id="FullTextSearch" Caption="Filtrar Por Texto" />
+      <Action Id="HideItemsFromDashboard" Caption="Ocultar del dashboard" />
+      <Action Id="Link" Caption="Enlazar" />
+      <Action Id="ListViewShowObject" Caption="Abrir" />
+      <Action Id="Logoff" Caption="Cerrar Sesion" />
+      <Action Id="Logon" Caption="Iniciar Sesion" />
+      <Action Id="MergeAction" Caption="Combinar" />
+      <Action Id="MyDetails" Caption="Mi detalles" />
+      <Action Id="NavigateBack" Caption="Atras" />
+      <Action Id="NavigateForward" Caption="Alante" />
+      <Action Id="New" Caption="Nuevo" />
+      <Action Id="NextObject" Caption="Siguiente Registro" />
+      <Action Id="PreviousObject" Caption="Anterior Registro" />
+      <Action Id="Refresh" Caption="Refrescar" />
+      <Action Id="RefreshAction" Caption="Refrescar" />
+      <Action Id="ResetModelDifferences" Caption="Resetear Modelo" />
+      <Action Id="ResetPassword" Caption="Resetear Clave" />
+      <Action Id="ResetViewSettings" Caption="Resetear Vista" />
+      <Action Id="Save" Caption="Salvar" />
+      <Action Id="SaveAndClose" Caption="Salvar y Cerrar" />
+      <Action Id="SaveAndNew" Caption="Salvar y Nuevo" />
+      <Action Id="SetFilter" Caption="Filtro" />
+      <Action Id="ShowAllContexts" Caption="Validar" />
+      <Action Id="ShowItemsOnDashboard" Caption="Mostrar en dashboard" />
+      <Action Id="ShowNavigationItem" Caption="Navegacion" />
+      <Action Id="Unlink" Caption="Desenlazar" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRoleBase">
+      <OwnMembers>
+        <Member Name="ActionPermissions" Caption="Acciones Denegadas" />
+        <Member Name="Base" IsCustom="True" IsCalculated="True" Expression="1 + 1" Type="IncidentesBlazor.Module.BusinessObjects.Incidentes.Base" IsNewNode="True" />
+        <Member Name="CanEditModel" Caption="Puede Editar Modelo" />
+        <Member Name="IsAdministrative" Caption="Es Administrador" />
+        <Member Name="Name" Caption="Nombre" />
+        <Member Name="NavigationPermissions" Caption="Permisos de Navegacion" />
+        <Member Name="PermissionPolicy" Caption="Permisos de Politica" />
+        <Member Name="TypePermissions" Caption="Tipo de Permisos" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
+      <OwnMembers>
+        <Member Name="Roles" Caption="Puestos" />
+        <Member Name="UserName" Caption="Nombre Usuario" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default" Caption="Inicio" />
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="PermissionPolicyRole_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors1" ShowCaption="False" RelativeSize="21.68284789644013">
+            <LayoutItem Id="Nombre" ViewItem="Nombre" Index="0" RelativeSize="23.880597014925375" IsNewNode="True" />
+            <LayoutItem Id="Name" Index="1" RelativeSize="17.91044776119403" />
+            <LayoutItem Id="IsAdministrative" Index="2" RelativeSize="17.91044776119403" />
+            <LayoutItem Id="CanEditModel" Index="3" RelativeSize="17.91044776119403" />
+            <LayoutItem Id="PermissionPolicy" Index="4" RelativeSize="22.388059701492537" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs1" RelativeSize="78.31715210355988">
+            <LayoutGroup Id="Users" ShowCaption="True" RelativeSize="100">
+              <LayoutItem Id="Users" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TypePermissions" ShowCaption="True" RelativeSize="100">
+              <LayoutItem Id="TypePermissions" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="NavigationPermissions" ShowCaption="True" RelativeSize="100">
+              <LayoutItem Id="NavigationPermissions" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="ActionPermissions" ShowCaption="True" RelativeSize="100">
+              <LayoutItem Id="ActionPermissions" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PermissionPolicyRole_Users_ListView">
+      <Columns>
+        <ColumnInfo Id="Oid" Index="-1" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

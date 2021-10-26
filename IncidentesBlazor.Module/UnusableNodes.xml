@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="PermissionPolicyRole_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Nombre" PropertyName="Nombre" Caption="Nombre(17)" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors1">
+            <LayoutItem Id="Nombre" ViewItem="Nombre" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PermissionPolicyRole_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Nombre" PropertyName="Nombre" Index="3" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ApplicationIcon>relacion.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="21.1.4" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="21.1.4" />
+    <PackageReference Include="DevExpress.Persistent.Base" Version="21.1.4" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl" Version="21.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="BusinessObjects\ORMDataModel.xpo.diagram">
+      <AutoGen>True</AutoGen>
+    </None>
+    <None Update="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+    </None>
+    <None Update="UnusableNodes1.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+    </None>
+  </ItemGroup>
+</Project>

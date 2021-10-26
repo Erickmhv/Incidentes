@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Default">
+        <Items Id="Items">
+          <Item Id="Puesto_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views Id="Views">
+    <DetailView Id="Puesto_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="PermissionPolicyRoleBase">
+              <LayoutItem Id="FechaNacimiento" ViewItem="FechaNacimiento" />
+              <LayoutGroup Id="Auto0abbca55-4ee9-4e93-a9c4-d7186fa9af28">
+                <LayoutGroup Id="Auto8f632968-4d79-412b-9f89-7b1132ffedb2">
+                  <LayoutItem Id="Correo" ViewItem="Correo" />
+                  <LayoutItem Id="Telefono" ViewItem="Telefono" />
+                </LayoutGroup>
+                <LayoutItem Id="Cedula" ViewItem="Cedula" />
+              </LayoutGroup>
+              <LayoutGroup Id="Autob4e8a2a3-97a2-4e95-b166-7f10947be9af">
+                <LayoutItem Id="Apellido" ViewItem="Apellido" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
